@@ -21,3 +21,4 @@ Test by sallstra!
 
 
 NICE 
+Jag lade till en style.css. Menyn e nu bara en a href, eftersom jag int fick funktionen ja försökt laga att fungera på alla sidor

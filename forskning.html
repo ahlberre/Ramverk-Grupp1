@@ -5,9 +5,15 @@
         <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     </head>
 
     <body>
+            <div class="menu">
+                    <a href="kurser.html">Kurser</a>
+                    <a href="personal.html">Personal</a>
+                    <a class="active" href="forskning.html">Forskning</a>
+            </div>
         <div id="demo">Original Korv™</div>
         <script type="text/babel">                  //ReactDOM är virtuell, render metoden skapar "riktiga DOM"
             function Welcome (props) {              //Komponenten Welcome äter props och returnerar element
