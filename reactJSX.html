@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>Hello React!</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    </head>
+
+    <body>
+        <div id="demo">Original Korv™</div>
+        <script type="text/babel">                  //ReactDOM är virtuell, render metoden skapar "riktiga DOM"
+            function Welcome (props) {              //Komponenten Welcome äter props och returnerar element
+                return <div><h1>Hello {props.name}!</h1></div>;
+            }   
+            function App() {
+                return (
+                    <div>
+                    <Welcome name="Dennis" />
+                    <Welcome name="Skurk" />
+                    </div>
+                );
+            }
+
+            ReactDOM.render(                        //två parametrar: komponent (t.ex. create element), hook
+                <App />,
+                document.getElementById("demo")     //en div som heter root är typiskt 
+
+            );
+        </script>
+    </body>
+</html>
