@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React ClockClass</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="demo">Ursprunglig text</div>
+        <script type="text/babel">
+
+            class Klocka extends React.Component {           //Komponenten Welcome äter props och returnerar element
+                render() {
+                    return (
+                        <div>
+                            <h1>Hello time</h1>
+                            <h2>Tiden är nu: { this.props.date.toLocaleTimeString() }</h2>
+                        </div>
+                    );   
+                 }
+            }
+            function update () {
+                ReactDOM.render(                                 
+                    <Klocka date={ new Date() } />,                      
+                    document.getElementById("demo")              
+                );
+            }
+       
+            setInterval(update,1000);
+     
+        </script>
+    </body>
+</html>

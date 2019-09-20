@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Kurser</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div id="demo">Ursprunglig text</div>
+        <script type="text/babel">
+            
+        function Kurs(props) {       //För att skapa en kurskomponent
+            return (
+            <div className="kurs">
+            <p>Kursnamn: { props.namn } </p>
+            <p>Lektor: { props.lektor } </p>
+            <p>Timmar: { props.timmar } </p>
+            </div>
+            );
+        }
+
+        function Kurser(props) {     // För att skapa en kurser komponent
+            return (
+                <div>
+                    <Kurs namn="Ramverk" lektor="Dennis" timmar={100} />
+                    <Kurs namn="Webbutveckling" lektor="Dennis" timmar={100} />
+                    <Kurs namn="Databearbetning" lektor="Dennis" timmar={100} />
+                </div>
+            );
+        }
+         
+            ReactDOM.render(                                 
+                <Kurser />,                      
+                document.getElementById("demo")              
+            );
+            
+       
+
+     
+        </script>
+    </body>
+</html>

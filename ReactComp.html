@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Comp</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="demo">Ursprunglig text</div>
+        <script type="text/babel">
+
+            function Welcome(props) {           //Komponenten Welcome äter props och returnerar element
+                return <div><h1>Hello {props.name}</h1></div>;
+            }
+
+            function App() {
+                return (
+                    <div>
+                        <Welcome name="Jonas" />
+                        <Welcome name="Skurk" />
+                    </div>
+                );
+            }
+
+
+            ReactDOM.render(                                   // (komponenter, hook).... ReactDOM är virtuell, render metoden skapar riktiga "DOM"
+                <App />,                      
+                document.getElementById("demo")                //en div som heter root är typiskt react            
+            );
+        </script>
+    </body>
+</html>

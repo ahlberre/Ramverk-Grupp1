@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Events</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div id="test">Här kommer kurserna</div>
+        <div id="demo">Här kommer knappen</div>
+
+        <script type="text/babel">
+            
+        function Kurs(props) {       //För att skapa en kurskomponent   Lägg t.ex. props.json.namn
+            return (
+            <div className="kurs">
+            <p>Kursnamn: { props.namn } </p> 
+            <p>Lektor: { props.lektor } </p>
+            <p>Timmar: { props.timmar } </p>
+            </div>
+            );
+        }
+
+        function Kurser(props) {     // För att skapa en kurser komponent
+            return (
+                <div>
+                    <Kurs namn="Ramverk" lektor="Dennis" timmar={100} />
+                    <Kurs namn="Webbutveckling" lektor="Dennis" timmar={100} />
+                    <Kurs namn="Databearbetning" lektor="Dennis" timmar={100} />
+                </div>
+            );
+        }
+         
+        
+        function Knappen(props) {
+            return(
+                <>
+                 <button onClick={doSomething}>Visa kurser</button>
+                </>
+            );
+        }
+       
+
+
+        function doSomething(e) {
+            let json = {
+                                "namn":"Webbutveckling", 
+                                "kurskod":"IA-2-001 (0)",
+                                "timmar":100,
+                                "period":1
+                            };
+                console.log(json.namn);         //Mata ut kursnamnet i konsolen
+                //Rendera en kurskomponent och skcika json.namn som prop
+                ReactDOM.render( //Inte rätt plats för readcDOM render
+                    <Kurs namn={json.namn} />,document.getElementById("test")   
+                );
+        }
+            
+            ReactDOM.render(                                 
+                <Knappen />,                
+                document.getElementById("demo")              
+            );
+
+        </script>
+    </body>
+</html>
