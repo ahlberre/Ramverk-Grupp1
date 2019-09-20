@@ -22,3 +22,6 @@ Test by sallstra!
 
 NICE 
 Jag lade till en style.css. Menyn e nu bara en a href, eftersom jag int fick funktionen ja försökt laga att fungera på alla sidor
+
+
+Jag lade till en del exempel filer till vår git som man kan ha hjälp av - Jonas
