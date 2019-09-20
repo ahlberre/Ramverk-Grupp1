@@ -24,3 +24,6 @@ Lite Css addad - Jonas
 
 
 Tagitbort en par onödiga filer samt gjort små ändringar - Jonas
+
+Hela json-filen heter nu resursering.js. I reactApp- filen läser nu Kurser-komponenten in information från resurseringsfilen.
+~Rebecca
