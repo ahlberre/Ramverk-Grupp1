@@ -5,6 +5,7 @@
         <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="resursering.js"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
 
@@ -16,20 +17,26 @@
             
         
         
-            function Kurs(props) {       //För att skapa en kurskomponent
+            function Kurs(props) {           //för att skapa en kurskomponent
             return (
                 <div className="kurs">
-                    <p>Kursnamn: { props.namn } </p>
-                    <p>Lektor: { props.lektor } </p>
-            </div>
+                    <p>Kursnamn: {props.namn}</p>
+                    <p>Kurskod: {props.kurskod}</p>
+                    <p>Period: {props.period}</p>
+                    <p>Timmar: {props.timmar}</p>
+                </div>
             );
         }
 
-        function Kurser(props) {     // För att skapa en kurser komponent
-            return (
+        function Kurser(props)  {      //för att skapa en kurser-komponent
+            return(
                 <div>
-                    <Kurs namn="Ramverk" lektor="Dennis" timmar={100} />
-                    <Kurs namn="Webbutveckling" lektor="Dennis" timmar={100} />
+                    <Kurs namn={jsonObj.Program.IA.Kurser[1].namn} //hämtar information från jsonObj i filen resursering.js
+                    kurskod={jsonObj.Program.IA.Kurser[1].kurskod} 
+                    period={jsonObj.Program.IA.Kurser[1].period} 
+                    timmar={jsonObj.Program.IA.Kurser[1].timmar} />
+                    <Kurs namn="astrofysik" lektor="Tjorven" timmar={100} />
+                    <Kurs namn="hästlära" lektor="Tjorven" timmar={100} />
                 </div>
             );
         }
