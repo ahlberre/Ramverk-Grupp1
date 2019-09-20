@@ -18,3 +18,9 @@ Jag lade till en style.css. Menyn e nu bara en a href, eftersom jag int fick fun
 
 
 Jag lade till en del exempel filer till vår git som man kan ha hjälp av - Jonas
+
+
+Lite Css addad - Jonas
+
+
+Tagitbort en par onödiga filer samt gjort små ändringar - Jonas
