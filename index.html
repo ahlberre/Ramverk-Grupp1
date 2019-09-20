@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<html>  
+<html>
     <head>
-        <title>Jonnys Organiserins-Not-Excel</title>
+        <title>React App</title>
         <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <script src="resursering.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
             <div class="menu">
+                    <a class="active" href="index.html">Hem</a>
                     <a href="kurser.html">Kurser</a>
                     <a href="personal.html">Personal</a>
                     <a href="forskning.html">Forskning</a>
             </div>
-        <div id="demo">Original Korv™</div>
-        <script type="text/babel">                  //ReactDOM är virtuell, render metoden skapar "riktiga DOM"
-            function Welcome (props) {              //Komponenten Welcome äter props och returnerar element
-                return <div><h1>Hello {props.name}!</h1></div>;
-            }   
-            function App() {
-                return (
 
-                    <div>
-                    <Welcome name="Jonny" />
-                    </div>
-                );
+            <div id="demo">Här kommer knappen</div>
+        <script type="text/babel">
+        
+            function Hello(props){
+                return(<h1>Hello {props.name}!</h1>)
             }
-            /*function Menu() {
-                return <div class="menu">
-                        <a href="kurser.html">Kurser</a>
-                        <a href="personal.html">Personal</a>
-                        <a href="forskning.html">Forskning</a>
-                </div>
-            }*/
 
-            ReactDOM.render(                        //två parametrar: komponent (t.ex. create element), hook
-                <div>
-                    <App />
-                </div>,
-                document.getElementById("demo")     //en div som heter root är typiskt 
+        ReactDOM.render(<Hello name="Jonny"/> , document.getElementById("demo") );
 
-            );
+            
         </script>
     </body>
 </html>
