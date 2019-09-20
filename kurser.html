@@ -14,26 +14,85 @@
                     <a href="personal.html">Personal</a>
                     <a href="forskning.html">Forskning</a>
             </div>
-        <div id="demo">Original Korv™</div>
+
+        <div id="test">Här kommer kurserna</div>
+        <div id="demo">Här kommer knappen</div>
+
+
         <script type="text/babel">                  //ReactDOM är virtuell, render metoden skapar "riktiga DOM"
-            function Welcome (props) {              //Komponenten Welcome äter props och returnerar element
-                return <div><h1>Hello {props.name}!</h1></div>;
-            }   
-            function App() {
-                return (
+     
+        
+     function Kurs(props) {       //För att skapa en kurskomponent
+            return (
+                <div className="kurs">
+                    <p>Kursnamn: { props.namn } </p>
+                    <p>Lektor: { props.lektor } </p>
+            </div>
+            );
+        }
+
+        function Kurser(props) {     // För att skapa en kurser komponent
+            return (
+                <div>
+                    <Kurs namn="Ramverk" lektor="Dennis" timmar={100} />
+                    <Kurs namn="Webbutveckling" lektor="Dennis" timmar={100} />
+                </div>
+            );
+        }
+
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { //endast this.state i contruktorn! senare this.setstate()
+                    header : "State 1",
+                    body : <Kurser />
+                }
+                // This binding is necessary to make "this" work in the callback (Viktigt)
+                this.updateState = this.updateState.bind(this);
+            }
+
+            updateState() {
+                if (this.state.header == "State 1") {
+                    this.setState({
+                    header : "State 2",
+                    body : <Kurser />
+                    });
+            } 
+            else{
+                this.setState({
+                    header : "State 1",
+                    body : <Kurser />
+                    });
+            }
+            }
+
+            render() {
+                console.log(this.state); //Efter setstate
+                return(
                     <div>
-                    <Welcome name="Jonny" />
+                        <h1>{this.state.header}</h1>
+                        <div>{this.state.body}</div>
+                        <button onClick={this.updateState}>Visa kurser</button>
+                        
+                        <select onChange={this.updateState} > 
+                            <option value="st1">State 1</option>
+                            <option value="st2">State 2</option>
+
+                        </select>
+
+
                     </div>
                 );
             }
+        }
 
-            ReactDOM.render(                        //två parametrar: komponent (t.ex. create element), hook
-                <div>
-                <App />
-                </div>,
-                document.getElementById("demo")     //en div som heter root är typiskt 
+        ReactDOM.render( <App />, document.getElementById("demo") );
 
-            );
+            
+
+
+
+
         </script>
     </body>
 </html>
