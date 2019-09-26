@@ -29,3 +29,6 @@ Hela json-filen heter nu resursering.js. I reactApp- filen läser nu Kurser-komp
 ~Rebecca
 Ändrade nu ännu så att det som fanns i reactApp finns i kurser.html
 ^Rebecca
+
+I resursering.js ligger nu forskningen i en skild array inne i IA-delen. Forskningsdelen heter forskning.
+//Rebecca
