@@ -46,6 +46,23 @@
                 </div>
             );
         }
+        function loop() {
+                var kurser =[];
+                for (var i = 0; i < jsonObj.Program.IA.Kurser.length; i++){
+                    kurser.push(jsonObj.Program.IA.Kurser[i]);
+                                 
+                }
+                console.log(kurser); //en array med två kurser, likadan som json.kurs
+
+            //Map-övning
+            //map skickar varje värde i en array till en funktion och skapar
+            //en ny array av de returnerade värdena
+            var elements = []; //elements[<p>Hästlära</p>,<p>Ramverk</p>]
+            elements = kurser.map(Kurs); //skapa en Kurskomponent för kurser[i...n]
+
+            return elements;
+            }
+
 
         class App extends React.Component {
             constructor(props) {
@@ -93,7 +110,7 @@
             }
         }
 
-        ReactDOM.render( <App />, document.getElementById("demo") );
+        ReactDOM.render( loop(), document.getElementById("demo") );
 
             
         </script>

@@ -194,8 +194,10 @@ var jsonObj =
           "kurskod": "IA‑2‑020 (0)",
           "timmar": 100,
           "period": 1
-        },
-        {
+        }],
+        "Forsking": [
+          {
+        
           "namn": "Administration",
           "kurskod": "IA‑2‑031 (0)",
           "timmar": 100,

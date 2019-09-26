@@ -6,51 +6,32 @@
         <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <link rel="stylesheet" href="style.css" />
+        <script src="resursering.js"></script>
     </head>
 
     <body>
-        <div id="test">Här kommer kurserna</div>
-        <div id="demo">Här kommer knappen</div>
+        <div id="demo">Här kommer kurserna</div>
 
         <script type="text/babel">
 
-        var json = {
-            "kurs":[
-                {
-                "namn":"Hästlära",
-                "timmar":100
-                },
-                {
-                "namn":"Korv",
-                "timmar":100
-                },
-                {
-                "namn":"Bildkonst",
-                "timmar":100
-                },
-                {
-                "namn":"Astrofysik",
-                "timmar":100
-                },
-            {
-                "namn":"bananformer",
-                "timmar":100
-                }
-            ]
-        };
         
             function Kurs(props) {           //för att skapa en kurskomponent
             return (
                 <div className="kurs">
                     <p>Kursnamn: {props.namn}</p>
+                    <p>Kurskod: {props.kurskod}</p>
+                    <p>Period: {props.period}</p>
+                    <p>Timmar: {props.timmar}</p>
                 </div>
             );
-        }   //push-övning
+        }
+        console.log(jsonObj.Program.IA.Kurser.length);
+        //push-övning
             //<Kurs namn={json.kurs[0].namn}/> fungerar men loopar ju inte
             function loop() {
                 var kurser =[];
-                for (var i = 0; i < json.kurs.length; i++){
-                    kurser.push(json.kurs[i]);
+                for (var i = 0; i < jsonObj.Program.IA.Kurser.length; i++){
+                    kurser.push(jsonObj.Program.IA.Kurser[i]);
                                  
                 }
                 console.log(kurser); //en array med två kurser, likadan som json.kurs
