@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React App</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div id="test">Här kommer kurserna</div>
+        <div id="demo">Här kommer knappen</div>
+
+        <script type="text/babel">
+
+        var json = {
+            "kurs":[
+                {
+                "namn":"Hästlära",
+                "timmar":100
+                },
+                {
+                "namn":"Korv",
+                "timmar":100
+                },
+                {
+                "namn":"Bildkonst",
+                "timmar":100
+                },
+                {
+                "namn":"Astrofysik",
+                "timmar":100
+                },
+            {
+                "namn":"bananformer",
+                "timmar":100
+                }
+            ]
+        };
+        
+            function Kurs(props) {           //för att skapa en kurskomponent
+            return (
+                <div className="kurs">
+                    <p>Kursnamn: {props.namn}</p>
+                </div>
+            );
+        }   //push-övning
+            //<Kurs namn={json.kurs[0].namn}/> fungerar men loopar ju inte
+            function loop() {
+                var kurser =[];
+                for (var i = 0; i < json.kurs.length; i++){
+                    kurser.push(json.kurs[i]);
+                                 
+                }
+                console.log(kurser); //en array med två kurser, likadan som json.kurs
+
+            //Map-övning
+            //map skickar varje värde i en array till en funktion och skapar
+            //en ny array av de returnerade värdena
+            var elements = []; //elements[<p>Hästlära</p>,<p>Ramverk</p>]
+            elements = kurser.map(Kurs); //skapa en Kurskomponent för kurser[i...n]
+
+            return elements;
+            }
+
+
+        ReactDOM.render( loop(), document.getElementById("demo") );
+
+            
+        </script>
+    </body>
+</html>
