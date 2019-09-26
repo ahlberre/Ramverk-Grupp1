@@ -1,6 +1,19 @@
-html {
-    
-}
+
+
+html, body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    height: 100%;
+    /*overflow: hidden;*/
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    width: 95%;
+    margin: auto;
+  }
+
+  h1{
+      padding-left: 2.2%;
+  }
+
 .menu {
     padding-top: 50px;
     margin-bottom: 10px;
@@ -33,4 +46,10 @@ html {
     margin: 10px;
     width: fit-content;
     padding: 10px;
+}
+
+#poc{
+    margin: 100px;
+    padding: 100px;
+    border: 5px solid;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React App</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="resursering.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+            <div class="menu">
+                    <a class="active" href="PoC.html">Kurser</a>
+                    <a href="PoC.html">Personal</a>
+                    <a href="PoC.html">Forskning</a>
+            </div>
+            <br>
+        <h1>Hej Jonny!</h1>
+        <div id="poc"><b>Här kommer information om kurserna!</b>
+
+<ol>
+<ul>
+  <li>Webbutveckling</li>
+  <li>Dennis</li>
+  <li>P1</li>
+</ul>  
+</ol>
+<ol>
+<ul>
+  <li>Ramverk</li>
+  <li>Dennis</li>
+  <li>P2</li>
+</ul> 
+</ol>
+        </div>
+
+
+
+
+        <script type="text/babel">
+            
+        
+        
+           
+
+        ReactDOM.render( loop(), document.getElementById("demo") );
+
+            
+        </script>
+    </body>
+</html>
