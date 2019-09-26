@@ -8,6 +8,10 @@ html, body {
     margin: auto;
   }
 
+  h1{
+      padding-left: 2.2%;
+  }
+
 .menu {
     padding-top: 50px;
     margin-bottom: 10px;
