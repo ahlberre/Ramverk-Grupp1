@@ -37,3 +37,5 @@ I forskning.html finns nu en kopia av loopen som skriver ut kurserna, fast den s
 //Rebecca
 
 Gjort PoCen finslipad, ändrat på stilen, uppdatera titlar, m.m. m.m. - Jonas
+
+Uppdaterat index filen, stil och smått annat - Jonas
