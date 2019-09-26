@@ -35,3 +35,5 @@ I resursering.js ligger nu forskningen i en skild array inne i IA-delen. Forskni
 
 I forskning.html finns nu en kopia av loopen som skriver ut kurserna, fast den skriver ut forsknings"kurserna"
 //Rebecca
+
+Gjort PoCen finslipad, ändrat på stilen, uppdatera titlar, m.m. m.m. - Jonas
