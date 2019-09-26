@@ -194,10 +194,10 @@ var jsonObj =
           "kurskod": "IA‑2‑020 (0)",
           "timmar": 100,
           "period": 1
-        }],
-        "Forsking": [
+        }
+      ],
+        "Forskning": [
           {
-        
           "namn": "Administration",
           "kurskod": "IA‑2‑031 (0)",
           "timmar": 100,
@@ -262,8 +262,7 @@ var jsonObj =
           "kurskod": "IA‑2‑041 (0)",
           "timmar": 100,
           "period": 1
-        }
-      ]
+        }]
     },
     "BDA": {
       "Kurser": [
