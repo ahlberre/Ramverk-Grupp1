@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello React</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js"> </script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"> </script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"> </script>
+        <script src="resursering.js"></script>
+        
+    </head>
+
+    <body>
+        <div id="demo">Här kommer kursen</div>
+        <div id="test">Här kommer knappen</div>
+        <script type="text/babel">
+            
+        //console.log(jsonObj.Personal[0].Efternamn);
+        
+
+
+
+            //console.log(json.kurs[0].namn);
+
+            function Person(props) {
+                return (
+                    <p>Lektor: {props.Förnamn} {props.Efternamn} </p>
+                );
+            }
+            //Push övning
+            //Loopar kursnamnen, så alla av dem loggas i konsolen.
+
+            function loop() {
+                var personal = [];
+                for (var i=0; i<jsonObj.Personal.length; i++){
+                    personal.push(jsonObj.Personal[i]);
+                    
+                    // Nu skapas en array med två kurser som visar datat på samma sätt som json.kurs.
+                }
+
+                //console.log(personal);
+            
+
+            //Map övning
+            //Map skickar varje värde i en array till en funktion
+            //och skapar en ny array av de returnerade värden
+            var elements = [];
+            elements = personal.map(Person);
+            console.log(elements);
+
+            return elements;
+            
+            }
+
+
+
+                ReactDOM.render( loop(), document.getElementById("demo") );
+ 
+        </script>
+    </body>
+</html>
