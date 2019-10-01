@@ -10,31 +10,77 @@
     </head>
 
     <body>
-            <div class="menu">
-                    <a href="index.html">Hem</a>
-                    <a href="kurser.html">Kurser</a>
-                    <a href="personal.html">Personal</a>
-                    <a class="active" href="forskning.html">Forskning</a>
-            </div>
-            <br>
-        <div id="demo">Original Korv™</div>
-        <script type="text/babel">                  //ReactDOM är virtuell, render metoden skapar "riktiga DOM"
-            function Welcome (props) {              //Komponenten Welcome äter props och returnerar element
-                return <div><h1>Hej {props.name}!</h1></div>;
-            }   
-            function App() {
+        <div class="menu">
+                <a href="index.html">Hem</a>
+                <a href="kurser.html">Kurser</a>
+                <a href="personal.html">Personal</a>
+                <a class="active" href="forskning.html">Forskning</a>
+        </div>
+        <br>
+        <h1>Hej Jonny!</h1>
+        <select id="forskningMenu"></select>
+        <script type="text/babel">
+        
+            function Kurs(props) {
                 return (
-                    <div>
-                    <Welcome name="Jonny" />
+                    <div className="kurs">
+                        <strong><p>{props.namn}</p></strong>
+                        <p>Kurskod: {props.kurskod}</p>
+                        <p>Period: {props.period}</p>
+                        <p>Timmar: {props.timmar}</p>
                     </div>
                 );
             }
 
-            ReactDOM.render(                        //två parametrar: komponent (t.ex. create element), hook
-                <App />,
-                document.getElementById("demo")     //en div som heter root är typiskt 
+            function Dropdown(props) {
+                return (
+                        <option>{props.namn}</option>
+                );
+            }
 
-            );
+            function Forskning(props) {
+                return(
+                        <Dropdown namn={jsonObj.Program.IA.Forskning[1].namn}/>
+                );
+            }
+
+            function loopForskning() {
+                var forskning =[];
+                for (var i = 0; i < jsonObj.Program.IA.Forskning.length; i++){
+                    forskning.push(jsonObj.Program.IA.Forskning[i]);
+                                
+                }
+                var elements = [];
+                elements = forskning.map(Dropdown);
+
+                var personal = [];
+                for (var i=0; i < jsonObj.Personal.length; i++){
+                    personal.push(jsonObj.Personal[i]);
+                }
+                console.log(personal);
+
+                return elements;
+            }
+
+            /*function Person(props) {
+                return (
+                    <p>Lektor: {props.Förnamn} {props.Efternamn} </p>
+                );
+            }*/
+            
+            /*function loopPersonal() {
+                var personal = [];
+                for (var i=0; i < jsonObj.Personal.length; i++){
+                    personal.push(jsonObj.Personal[i]);
+                }
+                console.log(personal);
+                var elements = [];
+                elements = personal.map(Person);
+                return elements;
+            }*/
+
+            ReactDOM.render( loopForskning(), document.getElementById("forskningMenu") );
+
         </script>
     </body>
 </html>
