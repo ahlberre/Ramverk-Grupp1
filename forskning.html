@@ -71,5 +71,80 @@
             ReactDOM.render( loopForskning(), document.getElementById("forskningMenu") );
 
         </script>
+
+        <select id="personalMenu"></select>
+        <script type="text/babel">
+        
+            function Dropdown(props) {
+                return (
+                        <option>{props.Förnamn} {props.Efternamn}</option>
+                );
+            }
+        
+            function loopPersonal() {
+                var personal =[];
+                for (var i = 0; i < jsonObj.Personal.length; i++){
+                    personal.push(jsonObj.Personal[i]);
+                                        
+                }
+                var elements = [];
+                elements = personal.map(Dropdown);
+
+                return elements;
+            }
+                    
+            ReactDOM.render( loopPersonal(), document.getElementById("personalMenu") );
+        
+        </script>
+
+        <script type="text/babel">
+               
+            class RegisterForm extends React.Component {
+                constructor(props) {
+                super(props);
+                    this.state = {
+                        date: '',
+                        hours: '',
+                    };
+                }
+
+                mySubmitHandler = (event) => {
+                event.preventDefault();
+                alert("Du har registrerat " + this.state.hours + " timmar arbete.");
+                }
+
+                myChangeHandler = (event) => {
+                this.setState({hours: event.target.value});
+                }
+
+                render() {
+                return (
+                <form onSubmit={this.mySubmitHandler}>
+                <p>Datum:</p>
+                <input
+                    type='text'
+                    name='date'
+                    onChange={this.myChangeHandler}
+                />
+                <p>Antal timmar:</p>
+                <input
+                    type='text'
+                    name='hours'
+                    onChange={this.myChangeHandler}
+                />
+                <br/>
+                <br/>
+                <input type='submit' />
+                </form>
+                );
+                }
+            }       
+
+                ReactDOM.render(<RegisterForm />, document.getElementById('forskningsForm'));
+
+        </script>
+
+        <div id="forskningsForm"></div>
+
     </body>
 </html>
