@@ -355,54 +355,67 @@ var jsonObj =
   },
   "Personal": [
     {
+      id:1,
       "Förnamn": "Dennis",
       "Efternamn": "Biström"
     },
     {
+      id:2,
       "Förnamn": "Magnus",
       "Efternamn": "Westerlund"
     },
     {
+      id:3,
       "Förnamn": "Jonny",
       "Efternamn": "Karlsson"
     },
     {
+      id:4,
       "Förnamn": "Dan",
       "Efternamn": "Granqvist"
     },
     {
+      id:5,
       "Förnamn": "Richard",
       "Efternamn": "Weber"
     },
     {
+      id:6,
       "Förnamn": "Pekka",
       "Efternamn": "Butler"
     },
     {
+      id:7,
       "Förnamn": "Robin",
       "Efternamn": "Wikström"
     },
     {
+      id:8,
       "Förnamn": "Kaj-Mikael",
       "Efternamn": "Björk"
     },
     {
+      id:9,
       "Förnamn": "Joachim",
       "Efternamn": "Enkvist"
     },
     {
+      id:10,
       "Förnamn": "Andrey",
       "Efternamn": "Shcherbakov"
     },
     {
+      id:11,
       "Förnamn": "Leonardo",
       "Efternamn": "Espinosa Leal"
     },
     {
+      id:12,
       "Förnamn": "Anton",
       "Efternamn": "Akusok"
     },
     {
+      id:13,
       "Förnamn": "Shuhua",
       "Efternamn": "Liu"
     }

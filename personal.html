@@ -6,22 +6,40 @@
         <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js"> </script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"> </script>
         <script src="resursering.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
         
     </head>
 
     <body>
-        <div id="demo">Här kommer kursen</div>
+            <div class="menu">
+                    <a href="index.html">Hem</a>
+                    <a href="kurser.html">Kurser</a>
+                    <a href="personal.html">Personal</a>
+                    <a class="active" href="forskning.html">Forskning</a>
+            </div>
+        </br></br>
+        <select id="demo" key="id">Här kommer läraren</select>
         <div id="test">Här kommer knappen</div>
         <script type="text/babel">
+       
             
         //console.log(jsonObj.Personal[0].Efternamn);
         
             //console.log(json.kurs[0].namn);
+            
             function Person(props) {
                 return (
-                    <p>Lektor: {props.Förnamn} {props.Efternamn} </p>
+                    <option>
+                    {props.Förnamn} {props.Efternamn}
+                    </option>
+                    //<p>Lektor: {props.Förnamn} {props.Efternamn} </p>
+                    //{jsonObj.Personal.Efternamn} {jsonObj.Personal.Förnamn}
+                    
                 );
             }
+
+
+
             //Push övning
             //Loopar kursnamnen, så alla av dem loggas i konsolen.
             function loop() {
@@ -36,9 +54,19 @@
             //Map övning
             //Map skickar varje värde i en array till en funktion
             //och skapar en ny array av de returnerade värden
+            
+            
             var elements = [];
             elements = personal.map(Person);
             console.log(elements);
+          /*  return (
+                <select key={id}>
+                    {elements}
+                </select>
+
+            )
+            */
+            
             return elements;
             
             }
