@@ -39,3 +39,6 @@ I forskning.html finns nu en kopia av loopen som skriver ut kurserna, fast den s
 Gjort PoCen finslipad, ändrat på stilen, uppdatera titlar, m.m. m.m. - Jonas
 
 Uppdaterat index filen, stil och smått annat - Jonas
+
+Det finns nu två knappar på kurser.html-sidan. Den läser in kurserna beroende på vilken period de går i. Den
+fungerar int så smidigt, men den fungerar iallafall. - Rebecca
