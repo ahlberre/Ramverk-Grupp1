@@ -17,7 +17,6 @@
                     <a href="forskning.html">Forskning</a>
             </div>
             <br>
-        <h1>Hej Jonny!</h1>
         <div id="demo">Här kommer knappen</div>
 
         <script type="text/babel">
@@ -34,6 +33,31 @@
                 </div>
             );
         }
+        function Kurs1(props) {           //för att skapa en kurskomponent
+        if (props.period == 1){
+            return (
+                <div className="kurs">
+                    <p>Kursnamn: {props.namn}</p>
+                    <p>Kurskod: {props.kurskod}</p>
+                    <p>Period: {props.period}</p>
+                    <p>Timmar: {props.timmar}</p>
+                </div>
+            );
+        }
+        }
+        function Kurs2(props) {           //för att skapa en kurskomponent
+        if (props.period == 2){
+            return (
+                <div className="kurs">
+                    <p>Kursnamn: {props.namn}</p>
+                    <p>Kurskod: {props.kurskod}</p>
+                    <p>Period: {props.period}</p>
+                    <p>Timmar: {props.timmar}</p>
+                </div>
+            );
+        }
+        }
+
         function Kurser(props)  {      //för att skapa en kurser-komponent
             return(
                 <div>
@@ -43,15 +67,15 @@
                     timmar={jsonObj.Program.IA.Kurser[1].timmar} />
                 </div>
             );
-        }
+        } 
         function loop() {
+
                 var kurser =[];
                 for (var i = 0; i < jsonObj.Program.IA.Kurser.length; i++){
                     kurser.push(jsonObj.Program.IA.Kurser[i]);
                                  
                 }
-                console.log(kurser); //en array med två kurser, likadan som json.kurs
-
+               
             //Map-övning
             //map skickar varje värde i en array till en funktion och skapar
             //en ny array av de returnerade värdena
@@ -61,54 +85,68 @@
             return elements;
             }
 
+            function loop1() {
+                var kurser =[];
+                for (var i = 0; i < jsonObj.Program.IA.Kurser.length; i++){
+                kurser.push(jsonObj.Program.IA.Kurser[i]);
+                 
+                    } var elements = []; 
+                    elements = kurser.map(Kurs1); 
+
+            return elements;
+            }
+            function loop2() {
+                var kurser =[];
+                for (var i = 0; i < jsonObj.Program.IA.Kurser.length; i++){
+                kurser.push(jsonObj.Program.IA.Kurser[i]);
+                 
+                    } var elements = []; 
+                    elements = kurser.map(Kurs2); 
+
+            return elements;
+            }
 
         class App extends React.Component {
             constructor(props) {
                 super(props);
                 this.state = { //endast this.state i contruktorn! senare this.setstate()
-                    header : "State 1",
-                    body : <Kurser />
+                    header: "Kurser",
+                    body: loop()
                 }
                 // This binding is necessary to make "this" work in the callback (Viktigt)
                 this.updateState = this.updateState.bind(this);
             }
 
-            updateState() {
-                if (this.state.header == "State 1") {
-                    this.setState({
-                    header : "State 2",
-                    body : <Kurser />
+            updateState() { //uppdaterar kurslistan då man trycker på knappen
+               if (this.state.header == "Kurser" || this.state.header == "Period 2"){ 
+               this.setState({
+                    header : document.getElementById("knapp1").innerHTML,
+                    body : loop1()
                     });
-            } 
-            else{
+            }
+            else if (this.state.header == "Period 1" || this.state.header == "Kurser"){
                 this.setState({
-                    header : "State 1",
-                    body : <Kurser />
-                    });
+                    header : document.getElementById("knapp2").innerHTML,
+                    body : loop2()
+                });
             }
-            }
-
+        }
             render() {
-                console.log(this.state); //Efter setstate
-                return(
+              
+                return( //knappar där man väljer period
                     <div>
+                        <div class="column2"> 
+                        <button id="knapp1" onClick={this.updateState} value="1">Period 1</button>
+                        <button id="knapp2" onClick={this.updateState} value="2">Period 2</button>
+                        </div>
                         <h1>{this.state.header}</h1>
                         <div>{this.state.body}</div>
-                        <button onClick={this.updateState}>Visa kurser</button>
-                        
-                        <select onChange={this.updateState} > 
-                            <option value="st1">State 1</option>
-                            <option value="st2">State 2</option>
-
-                        </select>
-
-
                     </div>
                 );
             }
         }
 
-        ReactDOM.render( loop(), document.getElementById("demo") );
+        ReactDOM.render( <App /> , document.getElementById("demo") );
 
             
         </script>
